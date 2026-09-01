@@ -317,3 +317,86 @@ def set_origin_to_centermass_volume(ref=None):
 
 def origin_to_centermass_volume(ref=None):
     set_origin_to_centermass_volume(ref)
+
+
+def smart_apply_location(ref=None):
+    import bpy
+    if ref is not None:
+        deselect_all_objects()
+        select_object(ref)
+    bpy.ops.object.transform_apply(location=True, rotation=False, scale=False)
+
+
+def smart_apply_rotation(ref=None):
+    import bpy
+    if ref is not None:
+        deselect_all_objects()
+        select_object(ref)
+    bpy.ops.object.transform_apply(location=False, rotation=True, scale=False)
+
+
+def smart_apply_scale(ref=None):
+    import bpy
+    if ref is not None:
+        deselect_all_objects()
+        select_object(ref)
+    bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+
+
+def smart_apply_rotation_scale(ref=None):
+    import bpy
+    if ref is not None:
+        deselect_all_objects()
+        select_object(ref)
+    bpy.ops.object.transform_apply(location=False, rotation=True, scale=True)
+
+
+def smart_apply_all(ref=None):
+    import bpy
+    if ref is not None:
+        deselect_all_objects()
+        select_object(ref)
+    bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
+
+
+def apply_transforms_keep_children(ref=None):
+    import bpy
+    objref = get_object(ref)
+    if objref is None:
+        return
+    children = list(objref.children)
+    child_offsets = {}
+    for child in children:
+        child_offsets[child.name] = {
+            'location': child.location.copy(),
+            'matrix': child.matrix_world.copy(),
+        }
+    select_object(objref)
+    bpy.ops.object.transform_apply(location=True, rotation=True, scale=True)
+    for child in children:
+        if child.name in child_offsets:
+            child.matrix_world = child_offsets[child.name]['matrix']
+
+
+def clear_location(ref=None):
+    import bpy
+    if ref is not None:
+        deselect_all_objects()
+        select_object(ref)
+    bpy.ops.object.location_clear()
+
+
+def clear_rotation(ref=None):
+    import bpy
+    if ref is not None:
+        deselect_all_objects()
+        select_object(ref)
+    bpy.ops.object.rotation_clear()
+
+
+def clear_scale(ref=None):
+    import bpy
+    if ref is not None:
+        deselect_all_objects()
+        select_object(ref)
+    bpy.ops.object.scale_clear()

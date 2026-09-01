@@ -1,6 +1,6 @@
-from . import cleanup, selection, lighting, optimization, interface, world, rename, render_presets, export, snapshots
+from . import cleanup, selection, lighting, optimization, interface, world, rename, render_presets, export, snapshots, transforms, material_batch, viewport, visibility, cameras
 
-submodules = [cleanup, selection, lighting, optimization, interface, world, rename, render_presets, export, snapshots]
+submodules = [cleanup, selection, lighting, optimization, interface, world, rename, render_presets, export, snapshots, transforms, material_batch, viewport, visibility, cameras]
 
 
 def register():
