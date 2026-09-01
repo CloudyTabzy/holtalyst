@@ -9,6 +9,11 @@ class HOLTALYST_PT_Cleanup_Panel(Panel):
     bl_region_type = "UI"
     bl_category = "Holtalyst"
 
+    @classmethod
+    def poll(cls, context):
+        from ..preferences import is_panel_enabled
+        return is_panel_enabled("show_cleanup")
+
     def draw_header(self, context):
         self.layout.label(text="", icon="BRUSH_DATA")
 
