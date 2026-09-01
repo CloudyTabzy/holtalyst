@@ -9,7 +9,7 @@ from bpy.props import (
 
 
 class HOLTALYST_Preferences(AddonPreferences):
-    bl_idname = "holtalyst"
+    bl_idname = __package__
 
     default_export_path: StringProperty(
         name="Default Export Path",
@@ -142,7 +142,8 @@ class HOLTALYST_Preferences(AddonPreferences):
 
 
 def get_preferences():
-    addon = bpy.context.preferences.addons.get("holtalyst")
+    prefs = bpy.context.preferences.addons
+    addon = prefs.get(__package__) or prefs.get("holtalyst") or prefs.get("bl_ext.user_default.holtalyst")
     if addon:
         return addon.preferences
     return None
