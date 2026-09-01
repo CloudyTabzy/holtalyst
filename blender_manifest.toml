@@ -1,0 +1,16 @@
+schema_version = "1.0.0"
+
+id = "holtalyst"
+version = "6.0.0"
+name = "Holtalyst"
+tagline = "Workflow tools for Blender — cleanup, selection, lighting, and optimization"
+maintainer = "CloudyTabzy"
+type = "add-on"
+tags = ["Object", "Scene", "Lighting", "Mesh"]
+license = ["SPDX:GPL-3.0-or-later"]
+copyright = ["Originally created by Curtis Holt as 'Holt Tools'"]
+
+blender_version_min = "4.2.0"
+
+[permissions]
+files = "Import/export operations may read/write files"
