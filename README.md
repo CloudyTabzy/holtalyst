@@ -1,5 +1,11 @@
 # Holtalyst
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Blender: 4.2+](https://img.shields.io/badge/Blender-4.2%2B-orange.svg)](https://www.blender.org/)
+[![Version: 6.0.0](https://img.shields.io/badge/Version-6.0.0-green.svg)](https://github.com/CloudyTabzy/holtalyst/releases)
+[![Python: 3.x](https://img.shields.io/badge/Python-3.x-yellow.svg)](https://www.python.org/)
+[![Platform: Windows | macOS | Linux](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)](https://www.blender.org/)
+
 Workflow tools for Blender — cleanup, selection, lighting, optimization, batch rename, render presets, export, and scene snapshots.
 
 ## Features
