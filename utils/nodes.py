@@ -1,8 +1,11 @@
 import bpy
 from .common import is_string, get_object
+from ..compat import IS_BLENDER_5
 
 
 def set_material_use_nodes(matref, value):
+    if IS_BLENDER_5:
+        return
     matref.use_nodes = value
 
 
@@ -32,7 +35,8 @@ def get_nodes(mat):
 
 
 def get_node_tree(matref, make_tree=True):
-    matref.use_nodes = make_tree
+    if not IS_BLENDER_5:
+        matref.use_nodes = make_tree
     return matref.node_tree
 
 

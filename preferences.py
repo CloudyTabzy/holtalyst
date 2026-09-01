@@ -56,7 +56,9 @@ class HOLTALYST_Preferences(AddonPreferences):
         layout.label(text="General", icon='PREFERENCES')
         box = layout.box()
         col = box.column()
-        col.prop(self, "autosmooth_default_angle")
+        from .compat import IS_BLENDER_5
+        if not IS_BLENDER_5:
+            col.prop(self, "autosmooth_default_angle")
 
         layout.label(text="Export", icon='EXPORT')
         box = layout.box()

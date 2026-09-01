@@ -24,7 +24,7 @@ def select_all_text():
 
 
 def select_all_hair():
-    bpy.ops.object.select_by_type(type='HAIR')
+    bpy.ops.object.select_by_type(type='CURVES')
 
 
 def select_all_point_clouds():

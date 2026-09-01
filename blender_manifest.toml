@@ -1,7 +1,7 @@
 schema_version = "1.0.0"
 
 id = "holtalyst"
-version = "6.2.0"
+version = "6.2.1"
 name = "Holtalyst"
 tagline = "Workflow tools for Blender — cleanup, selection, lighting, and optimization"
 maintainer = "CloudyTabzy"

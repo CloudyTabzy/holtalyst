@@ -365,7 +365,10 @@ def shade_flat(ref=None):
 
 def set_smooth_angle(ref, degrees=60):
     import math
+    from ..compat import IS_BLENDER_5
     objref = get_object(ref) if is_string(ref) else ref
+    if IS_BLENDER_5:
+        return
     if not objref.data.use_auto_smooth:
         objref.data.use_auto_smooth = True
     objref.data.auto_smooth_angle = math.radians(degrees)

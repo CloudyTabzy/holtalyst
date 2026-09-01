@@ -76,11 +76,12 @@ class HOLTALYST_OT_SetWorldColor(Operator):
     bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
+        from ..compat import IS_BLENDER_5
         world = context.scene.world
         if world is None:
             self.report({'ERROR'}, "No world in scene")
             return {'CANCELLED'}
-        if world.use_nodes:
+        if IS_BLENDER_5 or world.use_nodes:
             for node in world.node_tree.nodes:
                 if node.type == 'BACKGROUND':
                     node.inputs[0].default_value = (0.05, 0.05, 0.05, 1.0)
